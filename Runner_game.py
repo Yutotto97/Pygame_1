@@ -7,11 +7,11 @@ class Player(pygame.sprite.Sprite):
     
     def __init__(self):
         super().__init__()
-        player_walk_1 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/player_walk_1.png').convert_alpha()
-        player_walk_2 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/player_walk_2.png').convert_alpha()
+        player_walk_1 = pygame.image.load('/pics/player_walk_1.png').convert_alpha()
+        player_walk_2 = pygame.image.load('/pics/player_walk_2.png').convert_alpha()
         self.player_walk = [player_walk_1,player_walk_2]
         self.player_index = 0
-        self.player_jump = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/jump.png').convert_alpha()
+        self.player_jump = pygame.image.load('/pics/jump.png').convert_alpha()
 
         self.image = self.player_walk[self.player_index]        
         self.rect = self.image.get_rect(midbottom =(80,300))
@@ -48,8 +48,8 @@ class Victor(pygame.sprite.Sprite):
     
     def __init__(self):
         super().__init__()
-        victor_1 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/Victor_1.png').convert_alpha()
-        victor_2 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/Victor_2.png').convert_alpha()
+        victor_1 = pygame.image.load('/pics/Victor_1.png').convert_alpha()
+        victor_2 = pygame.image.load('/pics/Victor_2.png').convert_alpha()
         self.victor_head = [victor_1,victor_2]
         self.victor_index = 0
 
@@ -90,9 +90,9 @@ class Obstacle(pygame.sprite.Sprite):
     def __init__(self,x,y):
         super().__init__()
         if int(random()*1.1):
-            fire_1 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/fire1.png').convert_alpha()
-            fire_2 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/fire2.png').convert_alpha()
-            fire_3 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/fire3.png').convert_alpha()
+            fire_1 = pygame.image.load('/pics/fire1.png').convert_alpha()
+            fire_2 = pygame.image.load('/pics/fire2.png').convert_alpha()
+            fire_3 = pygame.image.load('/pics/fire3.png').convert_alpha()
             self.frames = []
             self.hurtful = 1
             for frame in [fire_1,fire_2,fire_3]:
@@ -102,8 +102,8 @@ class Obstacle(pygame.sprite.Sprite):
         else:
             self.hurtful = 0
             self.gravity = -5
-            snail_walk_1 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/snail1.png').convert_alpha()
-            snail_walk_2 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/snail2.png').convert_alpha()
+            snail_walk_1 = pygame.image.load('/pics/snail1.png').convert_alpha()
+            snail_walk_2 = pygame.image.load('/pics/snail2.png').convert_alpha()
             self.frames = [snail_walk_1,snail_walk_2]
             # y_pos = 300
         
@@ -215,36 +215,36 @@ obstacle_group = pygame.sprite.Group()
 game_active = False
 start_time = 0
 score = 0
-sky_surface = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/Sky.png').convert()
-ground_surface = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/ground.png').convert()
+sky_surface = pygame.image.load('/pics/Sky.png').convert()
+ground_surface = pygame.image.load('/pics/ground.png').convert()
 
 game_name = test_font.render('Your PhD life',False,(111,196,169))
 game_name_rect = game_name.get_rect(center = (400,60))
 
-snail_walk_1 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/snail1.png').convert_alpha()
-snail_walk_2 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/snail2.png').convert_alpha()
+snail_walk_1 = pygame.image.load('/pics/snail1.png').convert_alpha()
+snail_walk_2 = pygame.image.load('/pics/snail2.png').convert_alpha()
 snail_walk = [snail_walk_1,snail_walk_2]
 snail_index = 0
 snail_surf = snail_walk[snail_index]
 snail_rect = snail_surf.get_rect(bottomright= (600,300))
 
-fly_surf = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/fire1.png').convert_alpha()
+fly_surf = pygame.image.load('/pics/fire1.png').convert_alpha()
 
 
 obstacle_rect_list = []
 
 
-player_walk_1 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/player_walk_1.png').convert_alpha()
-player_walk_2 = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/player_walk_2.png').convert_alpha()
+player_walk_1 = pygame.image.load('/pics/player_walk_1.png').convert_alpha()
+player_walk_2 = pygame.image.load('/pics/player_walk_2.png').convert_alpha()
 player_walk = [player_walk_1,player_walk_2]
 player_index = 0
 player_surf = player_walk[player_index]
 
-player_jump = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/jump.png').convert_alpha()
+player_jump = pygame.image.load('/pics/jump.png').convert_alpha()
 player_rect = player_surf.get_rect(midbottom =(80,300))
 player_gravity = 0
 
-player_stand = pygame.image.load('/Users/Yuto/Documents/Personal_Files/Game project/player_stand.png').convert_alpha()
+player_stand = pygame.image.load('/pics/player_stand.png').convert_alpha()
 player_stand_scaled = pygame.transform.scale2x(player_stand)
 player_stand_rect = player_stand_scaled.get_rect(center = (400,200))
 
